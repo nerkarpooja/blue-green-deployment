@@ -89,14 +89,10 @@ blue-green-deployment-aws/
         |-- 09_Green_ASG_running_with_2_healthy_instances.png
         |-- 10_Green_website_verified_directly.png
         |-- 11_Green_now_live_through_ALB.png 
-        |-- 12_Rolled_back_to_Blue_in_seconds.png
-        |-- 13_Both_Blue_and_Green_responding.png
-        |-- 14_50-50_split.png
-        |-- 15_0_Blue_100_Green.png
-        |-- 16_Full_Green_deployment_complete.png
-        |-- 17_Registered_Target.png
-        |-- 18_Both_Blue_and_Green_responding_2.png
-        |-- 19_Both_Blue_and_Green_responding_3.png
+        |-- 12_50-50_split.png
+        |-- 13_0_Blue_100_Green.png 
+        |-- 14_80_Blue_20_Green.png
+        
 ```
 
 ---
@@ -221,7 +217,7 @@ Screenshot:![](screenshots/11_Green_now_live_through_ALB.png)
 Simulated a critical bug being reported in Version 2.0. Switched the ALB listener back to `blue-tg`. Version 1.0 was restored in under 10 seconds. The Blue environment was kept running specifically for this scenario.
 
 Screenshot: 
-![](screenshots/12_Rolled_back_to_Blue_in_seconds.png)
+![](screenshots/15_Rolled_back_to_Blue_in_seconds.png)
 
 ---
 
@@ -238,9 +234,8 @@ Sent 20% of traffic to Green first. Refreshed the ALB URL multiple times to conf
 | blue-tg | 80 | 80% |
 | green-tg | 20 | 20% |
 
-Screenshot: ![](screenshots/13_Both_Blue_and_Green_responding.png)
-Screenshot: ![](screenshots/18_Both_Blue_and_Green_responding_2.png)
-Screenshot: ![](screenshots/19_Both_Blue_and_Green_responding_3.png)
+Screenshot: ![](screenshots/14_80_Blue_20_Green.png.png)
+
 
 ---
 
@@ -253,7 +248,7 @@ No errors found in the 20% test. Increased Green traffic to 50%.
 | blue-tg | 50 | 50% |
 | green-tg | 50 | 50% |
 
-Screenshot: ![](screenshots/14_50-50_split.png)
+Screenshot: ![](screenshots/12_50-50_split.png)
 
 ---
 
@@ -266,7 +261,7 @@ Green confirmed stable. Completed the migration by sending all traffic to Green.
 | blue-tg | 0 | 0% |
 | green-tg | 100 | 100% |
 
-Screenshot: ![](screenshots/15_0_Blue_100_Green.png)
+Screenshot: ![](screenshots/13_0_Blue_100_Green.png)
 Screenshot: ![](screenshots/16_Full_Green_deployment_complete.png)
 
 ---
