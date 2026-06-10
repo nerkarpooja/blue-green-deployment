@@ -92,6 +92,8 @@ blue-green-deployment-aws/
         |-- 12_50-50_split.png
         |-- 13_0_Blue_100_Green.png 
         |-- 14_80_Blue_20_Green.png
+        |-- 15_Rolled_back_to_Blue_in_seconds.png
+        |-- 16_Full_Green_deployment_complete.png
         
 ```
 
@@ -129,7 +131,7 @@ The Auto Scaling Group manages how many servers are running at any time. It uses
 
 Created `blue-asg` with:
 - Subnets across ap-south-1a, ap-south-1b, ap-south-1c
-- Desired: 2, Minimum: 1, Maximum: 4
+- Desired: 2, Minimum: 1, Maximum: 3
 - ELB health checks enabled
 
 Screenshot: ![](screenshots/03_Blue_ASG.png)
@@ -234,7 +236,7 @@ Sent 20% of traffic to Green first. Refreshed the ALB URL multiple times to conf
 | blue-tg | 80 | 80% |
 | green-tg | 20 | 20% |
 
-Screenshot: ![](screenshots/14_80_Blue_20_Green.png.png)
+Screenshot: ![](screenshots/14_80_Blue_20_Green.png)
 
 
 ---
